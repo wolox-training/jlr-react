@@ -1,19 +1,12 @@
 @import '../../scss/variables/_colors';
 
 .container {
-border-top:  solid 4px $blue-light;
-padding: 20px 5px;
-display: flex;
-justify-content: center;
+  border-top: solid 4px $blue-light;
+  display: flex;
+  justify-content: center;
+  padding: 20px 5px;
 }
 
 .logo {
   height: 5vmin;
 }
-
-
-
-
-
-
-
