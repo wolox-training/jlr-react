@@ -14,12 +14,12 @@ function Language() {
   };
 
   return (
-    <>
+    <div className={styles.container}>
       <select className={styles.select} onChange={changeLanguage} value={language}>
         <option value="es">{t('Translation:spanish')}</option>
         <option value="en">{t('Translation:english')}</option>
       </select>
-    </>
+    </div>
   );
 }
 
