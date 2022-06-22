@@ -15,7 +15,8 @@ function SignUp() {
   const {
     register,
     handleSubmit,
-    formState: { errors }
+    formState: { errors },
+    watch
   } = useForm<IFormSignUp>({ mode: 'onChange' });
 
   const onSubmit = (data: IFormSignUp) => {
@@ -64,7 +65,7 @@ function SignUp() {
           type="password"
           register={register}
           errors={errors}
-          validations={validations().passwordConfirm}
+          validations={validations(watch).passwordConfirm}
         />
         <button className={styles.btnSignUp} type="submit">
           {t('SignUp:signUp')}

@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 
-export const validations = () => {
+export const validations = (watch?: any) => {
   // eslint-disable-next-line
   const { t } = useTranslation();
 
@@ -24,7 +24,7 @@ export const validations = () => {
     },
     passwordConfirm: {
       required: t('Forms:required'),
-      validate: (val: string) => val === 'password' || t('Forms:passwordConfirm')
+      validate: (val: string) => val === watch('password') || t('Forms:passwordConfirm')
     }
   };
   return validation;
