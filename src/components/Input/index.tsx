@@ -1,15 +1,26 @@
 import React from 'react';
 
-import { InputProps } from '../../utils/types';
-
 import styles from './styles.module.scss';
 
-function Input({ label, register, errors, type, name }: InputProps) {
+type InputProps = {
+  errors: any;
+  type: 'text' | 'email' | 'number' | 'password';
+  name: string;
+  label: string;
+  register: any;
+  validations: any;
+};
+
+function Input({ label, register, errors, type, name, validations }: InputProps) {
   return (
     <>
-      <label className={styles.label}>{label}</label>
-      <input className={styles.input} type={type} {...register(name)} />
-      <p className={styles.errors}>{errors[name]?.message}</p>
+      <label className={errors[name]?.message ? styles.labelFormError : styles.labelForm}>{label}</label>
+      <input
+        className={errors[name]?.message ? styles.inputFormError : styles.inputForm}
+        type={type}
+        {...register(name, validations)}
+      />
+      <p className={styles.errorsForm}>{errors[name]?.message}</p>
     </>
   );
 }

@@ -1,5 +1,6 @@
 import Api from '../config/api';
+import { IFormSignUp } from '../utils/types'
 
 // service users
 
-Api.post('/user');
+export const signUp = (user:IFormSignUp)=>  Api.post('/api/v1/users', user);

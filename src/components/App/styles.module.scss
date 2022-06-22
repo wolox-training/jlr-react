@@ -1,9 +1,6 @@
 @import '../../scss/variables/_colors';
 
 .container {
-  background-color: $gray;
   display: flex;
-  height: 100vh;
   justify-content: center;
-  padding-top: 10px;
 }

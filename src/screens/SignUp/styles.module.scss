@@ -1,20 +1,24 @@
 @import '../../scss/variables/_colors';
 
 .container {
-  margin: 10px 20px;
-  min-width: 35%;
+  background-color: $gray;
+  margin: 20px;
+  min-width: 25%;
 }
 
 .form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 3px;
+  padding: 0 30px;
+  padding-bottom: 30px;
 }
 
 .btn-signUp {
   background-color: $green-light;
   border-radius: 4px;
   color: white;
+  font-weight: normal;
   height: 30px;
   margin-top: 10px;
   padding: 4px 4px;
@@ -25,6 +29,7 @@
   border: solid 2px $green-light;
   border-radius: 4px;
   color: $green-light;
+  font-weight: 600;
   height: 30px;
   padding: 4px 4px;
   width: 100%;

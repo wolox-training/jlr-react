@@ -1,6 +1,9 @@
 @import '../../scss/variables/_colors';
 
-.container {}
+.container {
+  position: absolute;
+  right:  10px;
+}
 
 .select {
   background-color: $green-light;

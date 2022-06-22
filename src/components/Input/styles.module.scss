@@ -1,20 +1,39 @@
 @import '../../scss/variables/_colors';
 
-.input {
+%input {
   background-color: white;
   border-radius: 4px;
-  height: 30px;
+  height: 35px;
   width: 100%;
 }
 
-.label {
-  color: black;
+%label {
   font-weight: 600;
-  margin: 6px 0;
   text-align: left;
 }
 
-.errors {
+.input-form {
+  @extend %input;
+}
+
+.input-form-error {
+  @extend %input;
+  border: 1px solid red;
+}
+
+.label-form {
+  @extend %label;
+  color: black;
+  margin-top: 8px;
+}
+
+.label-form-error {
+  @extend %label;
+  color: red;
+  margin-top: 5px;
+}
+
+.errors-form {
   color: red;
   font-size: small;
 }
