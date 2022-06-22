@@ -17,7 +17,7 @@
 .btn-signUp {
   background-color: $green-light;
   border-radius: 4px;
-  color: white;
+  color: $white;
   font-weight: normal;
   height: 30px;
   margin-top: 10px;
@@ -36,7 +36,7 @@
 }
 
 .bar {
-  background-color: rgba(82, 78, 78, 0.63);
+  background-color: $gray-dark;
   height: 1px;
   margin: 12px 0;
   width: 100%;

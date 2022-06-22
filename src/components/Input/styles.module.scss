@@ -1,7 +1,7 @@
 @import '../../scss/variables/_colors';
 
 %input {
-  background-color: white;
+  background-color: $white;
   border-radius: 4px;
   height: 35px;
   width: 100%;
@@ -23,17 +23,17 @@
 
 .label-form {
   @extend %label;
-  color: black;
+  color: $black;
   margin-top: 8px;
 }
 
 .label-form-error {
   @extend %label;
-  color: red;
+  color: $red;
   margin-top: 5px;
 }
 
 .errors-form {
-  color: red;
+  color: $red;
   font-size: small;
 }
