@@ -66,15 +66,17 @@ function Login() {
         />
         {credentialsError && <Notification message="Credenciales incorrectas" type="error" />}
         {mutation.error && <Notification message="Error al iniciar sesion" type="error" />}
-        <button className="btn-primary" type="submit">
-          {t('FormsButton:login')}
-        </button>
-        <div className={styles.bar} />
-        <Link to="/sign_up">
-          <button className="btn-secondary" type="button">
-            {t('FormsButton:signUp')}
+        <div className="btn-container">
+          <button className="btn-primary" type="submit">
+            {t('FormsButton:login')}
           </button>
-        </Link>
+          <div className={styles.bar} />
+          <Link to="/sign_up">
+            <button className="btn-secondary" type="button">
+              {t('FormsButton:signUp')}
+            </button>
+          </Link>
+        </div>
       </form>
     </div>
   );

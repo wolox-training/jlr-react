@@ -96,15 +96,17 @@ function SignUp() {
         ) : (
           ''
         )}
-        <button disabled={mutation.isLoading} className="btn-primary" type="submit">
-          {mutation.isLoading ? <Loading /> : t('FormsButton:signUp')}
-        </button>
-        <div className={styles.bar} />
-        <Link to="/">
-          <button className="btn-secondary" type="button">
-            {t('FormsButton:login')}
+        <div className="btn-container">
+          <button disabled={mutation.isLoading} className="btn-primary" type="submit">
+            {mutation.isLoading ? <Loading /> : t('FormsButton:signUp')}
           </button>
-        </Link>
+          <div className={styles.bar} />
+          <Link to="/">
+            <button className="btn-secondary" type="button">
+              {t('FormsButton:login')}
+            </button>
+          </Link>
+        </div>
       </form>
     </div>
   );
