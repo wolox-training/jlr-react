@@ -10,12 +10,12 @@
 
 .msg-error {
   @extend %container;
-  background-color: #e6b8b8;
-  color: #d54f51;
+  background-color: $red-light;
+  color: $red;
 }
 
 .msg-success {
   @extend %container;
-  background-color: #b2e3cd;
-  color: #219256;
+  background-color: $cyan-light;
+  color: $green-mint;
 }
