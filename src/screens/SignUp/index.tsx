@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useForm } from 'react-hook-form';
 import { useMutation } from 'react-query';
+import { useNavigate } from 'react-router-dom';
 
 import LogoContainer from '../../components/LogoContainer/index';
 import { IFormSignUp } from '../../utils/types';
@@ -14,9 +15,9 @@ import Notification from '../../components/Notification/index';
 import styles from './styles.module.scss';
 
 function SignUp() {
+  const navigate = useNavigate();
   const { t } = useTranslation();
 
-  const [userSuccess, setUserSuccess] = useState(false);
   const [userError, setUserError] = useState(false);
 
   const {
@@ -32,16 +33,16 @@ function SignUp() {
       console.log(data);
       if (data.ok) {
         reset();
-        setUserSuccess(true);
+        navigate('/', { replace: true });
         setUserError(false);
       } else {
-        setUserSuccess(false);
         setUserError(true);
       }
     }
   });
 
   const onSubmit = (data: IFormSignUp) => {
+    setUserError(false);
     mutation.reset();
     mutation.mutate(data);
   };
@@ -51,16 +52,16 @@ function SignUp() {
       <LogoContainer />
       <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
         <Input
-          label={t('FormsLabels:firstName')}
-          name="firstName"
+          label={t('FormsLabels:first_name')}
+          name="first_name"
           type="text"
           register={register}
           errors={errors}
           validations={validations().required}
         />
         <Input
-          label={t('FormsLabels:lastName')}
-          name="lastName"
+          label={t('FormsLabels:last_name')}
+          name="last_name"
           type="text"
           register={register}
           errors={errors}
@@ -83,8 +84,8 @@ function SignUp() {
           validations={validations().password}
         />
         <Input
-          label={t('FormsLabels:passwordConfirm')}
-          name="passwordConfirm"
+          label={t('FormsLabels:password_confirmation')}
+          name="password_confirmation"
           type="password"
           register={register}
           errors={errors}
@@ -95,7 +96,6 @@ function SignUp() {
         ) : (
           ''
         )}
-        {userSuccess && <Notification message="Usuario Registrado" type="success" />}
         <button disabled={mutation.isLoading} className="btn-primary" type="submit">
           {mutation.isLoading ? <Loading /> : t('FormsButton:signUp')}
         </button>

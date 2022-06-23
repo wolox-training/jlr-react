@@ -1,17 +1,17 @@
 import i18next from 'i18next';
 
 i18next.addResources('es', 'FormsLabels', {
-  firstName: 'Nombre',
-  lastName: 'Apellido',
+  first_name: 'Nombre',
+  last_name: 'Apellido',
   email: 'Email',
   password: 'Contraseña',
   passwordConfirm: 'Confirmación de contraseña'
 });
 
 i18next.addResources('en', 'FormsLabels', {
-  firstName: 'FirstName',
-  lastName: 'LastName',
+  first_name: 'FirstName',
+  last_name: 'LastName',
   email: 'Email',
   password: 'Password',
-  passwordConfirm: 'Password confirmation'
+  password_confirmation: 'Password confirmation'
 });
