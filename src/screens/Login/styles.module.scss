@@ -1,21 +1,20 @@
 @import '../../scss/variables/_colors';
 
 .container {
-  background-color: $gray;
-  margin: 20px;
-  min-width: 25%;
+  background-color: $gray-light;
+  width: 300px;
 }
 
 .form {
   display: flex;
   flex-direction: column;
-  gap: 3px;
-  padding: 0 30px;
-  padding-bottom: 30px;
+  gap: 2px;
+  padding: 24px;
 }
 
 .bar {
-  background-color: $gray-dark;
-  height: 1px;
-  width: 100%;
+  background-color: $gray;
+  height: 2px;
+  width: 252px;
+  margin: 10px 0;
 }

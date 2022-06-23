@@ -43,8 +43,8 @@ function SignUp() {
 
   const onSubmit = (data: IFormSignUp) => {
     setUserError(false);
-    mutation.reset();
     mutation.mutate(data);
+    mutation.reset();
   };
 
   return (
@@ -92,19 +92,21 @@ function SignUp() {
           validations={validations(watch).passwordConfirm}
         />
         {mutation.error || userError ? (
-          <Notification message="Error al registrar usuario" type="error" />
+          <Notification message={t('SignUp:userError')} type="error" />
         ) : (
           ''
         )}
-        <button disabled={mutation.isLoading} className="btn-primary" type="submit">
-          {mutation.isLoading ? <Loading /> : t('FormsButton:signUp')}
-        </button>
-        <div className={styles.bar} />
-        <Link to="/">
-          <button className="btn-secondary" type="button">
-            {t('FormsButton:login')}
+        <div className="btn-container">
+          <button disabled={mutation.isLoading} className="btn-primary" type="submit">
+            {mutation.isLoading ? <Loading /> : t('FormsButton:signUp')}
           </button>
-        </Link>
+          <div className={styles.bar} />
+          <Link to="/">
+            <button className="btn-secondary" type="button">
+              {t('FormsButton:login')}
+            </button>
+          </Link>
+        </div>
       </form>
     </div>
   );
