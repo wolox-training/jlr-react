@@ -6,4 +6,9 @@ export interface IFormSignUp {
   passwordConfirm: string;
 }
 
+export interface IFormLogin {
+  email: string;
+  password: string;
+}
+
 export type Nullable<T> = T | null;

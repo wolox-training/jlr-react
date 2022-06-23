@@ -1,0 +1,22 @@
+@import './variables/_colors';
+
+%btn {
+  border-radius: 4px;
+  font-weight: 600;
+  height: 30px;
+  margin: 10px 0;
+  padding: 4px 4px;
+  width: 100%;
+}
+
+.btn-primary {
+  @extend %btn;
+  background-color: $green-light;
+  color: $white;
+}
+  
+.btn-secondary {
+  @extend %btn;
+  border: solid 2px $green-light;
+  color: $green-light;
+}

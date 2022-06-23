@@ -1,6 +1,6 @@
 import i18next from 'i18next';
 
-i18next.addResources('es', 'Forms', {
+i18next.addResources('es', 'FormsValidate', {
   required: 'El campo es requerido',
   emailInvalid: 'Email invalido',
   minLengthPass: 'El campo debe tener minimo 8 caracteres',
@@ -9,7 +9,7 @@ i18next.addResources('es', 'Forms', {
   oneNumber: 'Debe contener al menos un numero'
 });
 
-i18next.addResources('en', 'Forms', {
+i18next.addResources('en', 'FormsValidate', {
   required: 'The field is required',
   emailInvalid: 'Invalid email',
   minLengthPass: 'The field must have a minimum of 8 characters',

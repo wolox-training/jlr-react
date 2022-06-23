@@ -1,0 +1,21 @@
+@import '../../scss/variables/_colors';
+
+%container { 
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: medium;
+  padding: 15px 5px;
+  text-align: center;
+}
+
+.msg-error {
+  @extend %container;
+  background-color: #e6b8b8;
+  color: #d54f51;
+}
+
+.msg-success {
+  @extend %container;
+  background-color: #b2e3cd;
+  color: #219256;
+}

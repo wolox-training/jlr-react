@@ -1,16 +1,22 @@
 import React from 'react';
 import { render } from 'react-dom';
+import { QueryClient, QueryClientProvider } from 'react-query';
 
 import App from 'components/App';
 import 'config/i18n';
 import 'scss/application.scss';
+import 'scss/forms.scss';
 
 import reportWebVitals from './reportWebVitals';
+
+const queryClient = new QueryClient();
 
 const renderApp = () => {
   render(
     <React.StrictMode>
-      <App />
+      <QueryClientProvider client={queryClient}>
+        <App />
+      </QueryClientProvider>
     </React.StrictMode>,
     document.getElementById('root')
   );
