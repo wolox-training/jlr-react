@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useForm } from 'react-hook-form';
 import { useMutation } from 'react-query';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import LogoContainer from '../../components/LogoContainer/index';
 import { IFormSignUp } from '../../utils/types';
@@ -100,9 +100,11 @@ function SignUp() {
           {mutation.isLoading ? <Loading /> : t('FormsButton:signUp')}
         </button>
         <div className={styles.bar} />
-        <button className="btn-secondary" type="button">
-          {t('FormsButton:login')}
-        </button>
+        <Link to="/">
+          <button className="btn-secondary" type="button">
+            {t('FormsButton:login')}
+          </button>
+        </Link>
       </form>
     </div>
   );
