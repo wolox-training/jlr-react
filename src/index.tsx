@@ -5,7 +5,6 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import App from 'components/App';
 import 'config/i18n';
 import 'scss/application.scss';
-import 'scss/forms.scss';
 
 import reportWebVitals from './reportWebVitals';
 

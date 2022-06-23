@@ -43,8 +43,8 @@ function SignUp() {
 
   const onSubmit = (data: IFormSignUp) => {
     setUserError(false);
-    mutation.reset();
     mutation.mutate(data);
+    mutation.reset();
   };
 
   return (
@@ -92,7 +92,7 @@ function SignUp() {
           validations={validations(watch).passwordConfirm}
         />
         {mutation.error || userError ? (
-          <Notification message="Error al registrar usuario" type="error" />
+          <Notification message={t('SignUp:userError')} type="error" />
         ) : (
           ''
         )}

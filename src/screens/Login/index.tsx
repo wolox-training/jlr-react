@@ -64,8 +64,8 @@ function Login() {
           errors={errors}
           validations={validations().required}
         />
-        {credentialsError && <Notification message="Credenciales incorrectas" type="error" />}
-        {mutation.error && <Notification message="Error al iniciar sesion" type="error" />}
+        {credentialsError && <Notification message={t('Login:credentialsError')} type="error" />}
+        {mutation.error && <Notification message={t('Login:loginError')} type="error" />}
         <div className="btn-container">
           <button className="btn-primary" type="submit">
             {t('FormsButton:login')}
