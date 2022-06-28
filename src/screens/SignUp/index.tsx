@@ -10,7 +10,7 @@ import Input from '../../components/Input/index';
 import { validations } from '../../constants/formsValidation';
 import { signUp } from '../../services/UsersService';
 import Loading from '../../components/Spinner/components/loading';
-import Notification from '../../components/Notification/index';
+import Notification from '../../components/PrivateRoute/index';
 
 import styles from './styles.module.scss';
 
@@ -52,7 +52,7 @@ function SignUp() {
       <LogoContainer />
       <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
         <Input
-          label={t('FormsLabels:first_name')}
+          label={t('FormsLabels:firstName')}
           name="first_name"
           type="text"
           register={register}
@@ -60,7 +60,7 @@ function SignUp() {
           validations={validations().required}
         />
         <Input
-          label={t('FormsLabels:last_name')}
+          label={t('FormsLabels:lastName')}
           name="last_name"
           type="text"
           register={register}
@@ -84,18 +84,14 @@ function SignUp() {
           validations={validations().password}
         />
         <Input
-          label={t('FormsLabels:password_confirmation')}
+          label={t('FormsLabels:passwordConfirmation')}
           name="password_confirmation"
           type="password"
           register={register}
           errors={errors}
           validations={validations(watch).passwordConfirm}
         />
-        {mutation.error || userError ? (
-          <Notification message={t('SignUp:userError')} type="error" />
-        ) : (
-          ''
-        )}
+        {mutation.error || userError ? <Notification message={t('SignUp:userError')} type="error" /> : ''}
         <div className="btn-container">
           <button disabled={mutation.isLoading} className="btn-primary" type="submit">
             {mutation.isLoading ? <Loading /> : t('FormsButton:signUp')}

@@ -1,5 +1,8 @@
 import Api from '../config/api';
+import { IBooksResponse } from '../utils/types';
+import { getHeaders } from '../utils/sessionManagement';
 
-// service books
+const headers = { headers: getHeaders() };
 
-export const getBooks = () => Api.post('https://books-training-rails.herokuapp.com/api/v1');
+export const getBooks = () =>
+  Api.get<IBooksResponse>('/api/v1/books', {}, headers).then(response => response.data);

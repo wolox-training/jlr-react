@@ -1,0 +1,37 @@
+@import '../../scss/variables/_colors';
+
+.container {
+  display: grid;
+  gap: 36px;
+  grid-template-columns: repeat(4, auto);
+  justify-content: center; 
+  margin: 45px 0; 
+}
+
+.cardBook {
+  background-color: $white;
+  box-shadow: 4px 4px 10px 0 $black-rgba;
+  height: 300px;
+  padding: 28px;
+  width: 198px; 
+}
+
+.img-book {
+  height: 200px;
+  width: 142px;
+}
+
+.title-book {
+  color: $black;
+  font-family: Roboto;
+  font-weight: 700;
+  font-size: 16px;  
+  line-height: 18px;
+}
+
+.author-book {
+  color: #828282;
+  font-family: Roboto;
+  line-height: 18px;
+  font-size: 14px;  
+}

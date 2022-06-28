@@ -2,18 +2,20 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { useMutation } from 'react-query';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import LogoContainer from '../../components/LogoContainer/index';
 import Input from '../../components/Input/index';
 import { validations } from '../../constants/formsValidation';
 import { IFormLogin } from '../../utils/types';
 import { login } from '../../services/UsersService';
-import Notification from '../../components/Notification/index';
+import Notification from '../../components/PrivateRoute/index';
+import LocalStorageService from '../../services/LocalStorageService';
 
 import styles from './styles.module.scss';
 
 function Login() {
+  const navigate = useNavigate();
   const { t } = useTranslation();
 
   const [credentialsError, setCredentialsError] = useState(false);
@@ -32,6 +34,10 @@ function Login() {
           client: data.headers.client,
           'access-token': data.headers['access-token']
         });
+        LocalStorageService.setValue('access-token', data.headers['access-token']);
+        LocalStorageService.setValue('client', data.headers.client);
+        LocalStorageService.setValue('uid', data.data.data.uid);
+        navigate('/home', { replace: true });
       } else {
         setCredentialsError(true);
       }

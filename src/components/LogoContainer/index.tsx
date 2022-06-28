@@ -1,7 +1,8 @@
 import React from 'react';
 
+import logo from '../../assets/logo_full_color.svg';
+
 import styles from './styles.module.scss';
-import logo from './assets/logo_full_color.svg';
 
 function LogoContainer() {
   return (
