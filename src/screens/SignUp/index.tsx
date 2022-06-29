@@ -10,7 +10,7 @@ import Input from '../../components/Input/index';
 import { validations } from '../../constants/formsValidation';
 import { signUp } from '../../services/UsersService';
 import Loading from '../../components/Spinner/components/loading';
-import Notification from '../../components/PrivateRoute/index';
+import Notification from '../../components/Notification/index';
 
 import styles from './styles.module.scss';
 

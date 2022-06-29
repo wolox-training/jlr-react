@@ -15,11 +15,11 @@ function NavBar() {
       {isLoading ? (
         <Loading />
       ) : (
-        books.map((todo: IBook) => (
-          <div key={todo.id} className={styles.cardBook}>
-            <img className={styles.imgBook} src={todo.image_url} />
-            <span className={styles.titleBook}>{todo.title}</span>
-            <span className={styles.authorBook}>{todo.author}</span>
+        books.map((book: IBook) => (
+          <div key={book.id} className={styles.cardBook}>
+            <img className={styles.imgBook} src={book.image_url} />
+            <span className={styles.titleBook}>{book.title}</span>
+            <span className={styles.authorBook}>{book.author}</span>
           </div>
         ))
       )}

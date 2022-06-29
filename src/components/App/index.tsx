@@ -19,30 +19,13 @@ function App() {
       <BrowserRouter>
         <Language />
         <Routes>
-          <Route
-            path="/home"
-            element={
-              <PrivateRoute>
-                <Home />
-              </PrivateRoute>
-            }
-          />
-          <Route
-            path="/sign_up"
-            element={
-              <PublicRoute>
-                <SignUp />
-              </PublicRoute>
-            }
-          />
-          <Route
-            path="/"
-            element={
-              <PublicRoute>
-                <Login />
-              </PublicRoute>
-            }
-          />
+          <Route element={<PrivateRoute />}>
+            <Route path="/home" element={<Home />} />
+          </Route>
+          <Route element={<PublicRoute />}>
+            <Route path="/sign_up" element={<SignUp />} />
+            <Route path="/" element={<Login />} />
+          </Route>
           <Route path="*" element={<div>No found</div>} />
         </Routes>
       </BrowserRouter>

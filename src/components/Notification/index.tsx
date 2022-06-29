@@ -8,7 +8,7 @@ export type Props = {
 };
 
 function Notification({ message, type }: Props) {
-  return <div className={type === 'error' ? styles.msgError : styles.msgSuccess}>{ message }</div>;
+  return <div className={type === 'error' ? styles.msgError : styles.msgSuccess}>{message}</div>;
 }
 
 export default Notification;

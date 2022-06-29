@@ -1,10 +1,14 @@
 import React from 'react';
-import { Navigate } from 'react-router-dom';
+import { Navigate, Outlet } from 'react-router-dom';
 
 import { isAuthenticated } from 'utils/sessionManagement';
 
-function Notification({ children }: any) {
-  return isAuthenticated() ? <Navigate to="/home" /> : children;
+function PublicRoutes() {
+  if (isAuthenticated()) {
+    return <Navigate to="/home" replace />;
+  }
+
+  return <Outlet />;
 }
 
-export default Notification;
+export default PublicRoutes;
