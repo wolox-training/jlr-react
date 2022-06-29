@@ -9,7 +9,7 @@ import Input from '../../components/Input/index';
 import { validations } from '../../constants/formsValidation';
 import { IFormLogin } from '../../utils/types';
 import { login } from '../../services/UsersService';
-import Notification from '../../components/PrivateRoute/index';
+import Notification from '../../components/Notification/index';
 import LocalStorageService from '../../services/LocalStorageService';
 
 import styles from './styles.module.scss';
