@@ -5,6 +5,7 @@ import Home from 'screens/Home/index';
 import SignUp from 'screens/SignUp/index';
 import Language from 'components/Translation';
 import Login from 'screens/Login/index';
+import NoFound from 'screens/NoFound/index';
 
 import PrivateRoute from '../PrivateRoute/index';
 import PublicRoute from '../PublicRoutes/index';
@@ -26,7 +27,7 @@ function App() {
             <Route path="/sign_up" element={<SignUp />} />
             <Route path="/" element={<Login />} />
           </Route>
-          <Route path="*" element={<div>No found</div>} />
+          <Route path="*" element={<NoFound />} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -10,7 +10,7 @@ import { validations } from '../../constants/formsValidation';
 import { IFormLogin } from '../../utils/types';
 import { login } from '../../services/UsersService';
 import Notification from '../../components/Notification/index';
-import LocalStorageService from '../../services/LocalStorageService';
+import { sessionUser } from '../../utils/sessionManagement';
 
 import styles from './styles.module.scss';
 
@@ -29,14 +29,9 @@ function Login() {
   const mutation = useMutation(login, {
     onSuccess: (data: any) => {
       if (data.ok) {
-        console.log({
-          uid: data.data.data.uid,
-          client: data.headers.client,
-          'access-token': data.headers['access-token']
-        });
-        LocalStorageService.setValue('access-token', data.headers['access-token']);
-        LocalStorageService.setValue('client', data.headers.client);
-        LocalStorageService.setValue('uid', data.data.data.uid);
+        const { uid, client } = data.headers;
+        const accessToken = data.headers['access-token'];
+        sessionUser({ accessToken, client, uid });
         navigate('/home', { replace: true });
       } else {
         setCredentialsError(true);
