@@ -29,11 +29,6 @@ function Login() {
   const mutation = useMutation(login, {
     onSuccess: (data: any) => {
       if (data.ok) {
-        console.log({
-          uid: data.headers.uid,
-          client: data.headers.client,
-          'access-token': data.headers['access-token']
-        });
         LocalStorageService.setValue('access-token', data.headers['access-token']);
         LocalStorageService.setValue('client', data.headers.client);
         LocalStorageService.setValue('uid', data.headers.uid);

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useQuery } from 'react-query';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 import { getBooks } from '../../services/BooksService';
 import Loading from '../Spinner/components/loading';
@@ -9,6 +10,7 @@ import { IBook } from '../../utils/types';
 import styles from './styles.module.scss';
 
 function NavBar() {
+  const { t } = useTranslation();
   const { data, isLoading } = useQuery('book', getBooks);
   const books = data?.page || [];
 
@@ -20,7 +22,7 @@ function NavBar() {
         books.map((book: IBook) => (
           <Link to={`/books/${book.id}`} key={book.id}>
             <div className={styles.cardBook}>
-              <img className={styles.imgBook} src={book.image_url} />
+              <img className={styles.imgBook} src={book.image_url} alt={t('Images:bookCover')} />
               <span className={styles.titleBook}>{book.title}</span>
               <span className={styles.authorBook}>{book.author}</span>
             </div>

@@ -47,8 +47,6 @@
 }
 
 .info-book {
-  display: flex;
-  flex-direction: column;
   width: 100%;
 }
 
@@ -64,7 +62,6 @@
   font-size: 20px;
   font-weight: 700;  
   line-height: 24px;
-  margin-right: 8px;
   margin-top: 36px;
 }
 
@@ -73,6 +70,7 @@
   font-family: Roboto;
   font-size: 20px;
   line-height: 24px;
+  margin-left: 8px;
 }
 
 .text-genre {

@@ -31,7 +31,6 @@ function SignUp() {
   const mutation = useMutation(signUp, {
     onSuccess: data => {
       if (data.ok) {
-        console.log(data.data)
         reset();
         navigate('/', { replace: true });
         setUserError(false);

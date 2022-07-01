@@ -29,26 +29,21 @@ function BookDetail() {
           ) : (
             <div className={styles.detailBook}>
               <div className={styles.sectionImg}>
-                <img className={styles.imgBook} src={book?.image_url} />
-                <img className={styles.imgBadge} src={imgBadge} />
+                <img className={styles.imgBook} src={book?.image_url} alt={t('Images:bookCover')} />
+                <img className={styles.imgBadge} src={imgBadge} alt={t('BookDetail:badge')} />
               </div>
               <div className={styles.infoBook}>
-                <div>
-                  <span className={styles.titleBook}>{book?.title}</span>
-                  <span className={styles.textGenre}>{`(${book?.genre})`}</span>
-                </div>
+                <span className={styles.titleBook}>{book?.title}</span>
+                <span className={styles.textGenre}>{`(${book?.genre})`}</span>
                 <div className={styles.bar} />
-                <div>
-                  <span className={styles.labelDetail}>{t('BookDetail:author')}:</span>
-                  <span className={styles.textDetail}>{book?.author}</span>
+                <div className={styles.labelDetail}>
+                  {t('BookDetail:author')}:<span className={styles.textDetail}>{book?.author}</span>
                 </div>
-                <div>
-                  <span className={styles.labelDetail}>{t('BookDetail:editor')}:</span>
-                  <span className={styles.textDetail}>{book?.editor}</span>
+                <div className={styles.labelDetail}>
+                  {t('BookDetail:editor')}:<span className={styles.textDetail}>{book?.editor}</span>
                 </div>
-                <div>
-                  <span className={styles.labelDetail}>{t('BookDetail:year')}:</span>
-                  <span className={styles.textDetail}>{book?.year}</span>
+                <div className={styles.labelDetail}>
+                  {t('BookDetail:year')}:<span className={styles.textDetail}>{book?.year}</span>
                 </div>
               </div>
             </div>
