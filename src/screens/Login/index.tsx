@@ -30,13 +30,13 @@ function Login() {
     onSuccess: (data: any) => {
       if (data.ok) {
         console.log({
-          uid: data.data.data.uid,
+          uid: data.headers.uid,
           client: data.headers.client,
           'access-token': data.headers['access-token']
         });
         LocalStorageService.setValue('access-token', data.headers['access-token']);
         LocalStorageService.setValue('client', data.headers.client);
-        LocalStorageService.setValue('uid', data.data.data.uid);
+        LocalStorageService.setValue('uid', data.headers.uid);
         navigate('/home', { replace: true });
       } else {
         setCredentialsError(true);

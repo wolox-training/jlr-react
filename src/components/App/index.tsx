@@ -5,6 +5,7 @@ import Home from 'screens/Home/index';
 import SignUp from 'screens/SignUp/index';
 import Language from 'components/Translation';
 import Login from 'screens/Login/index';
+import BookDetail from 'screens/BookDetail';
 
 import PrivateRoute from '../PrivateRoute/index';
 import PublicRoute from '../PublicRoutes/index';
@@ -21,6 +22,7 @@ function App() {
         <Routes>
           <Route element={<PrivateRoute />}>
             <Route path="/home" element={<Home />} />
+            <Route path="/books/:id" element={<BookDetail />} />
           </Route>
           <Route element={<PublicRoute />}>
             <Route path="/sign_up" element={<SignUp />} />
