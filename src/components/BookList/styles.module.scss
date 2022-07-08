@@ -13,6 +13,7 @@
   box-shadow: 4px 4px 10px 0 $black-rgba;
   height: 300px;
   padding: 28px;
+  position: relative;
   width: 198px; 
 }
 
@@ -34,4 +35,12 @@
   font-family: Roboto;
   font-size: 14px;
   line-height: 18px;    
+}
+
+.img-add {
+  bottom: 5px;
+  height: 32px;
+  position: absolute;
+  right: 5px;
+  width: 31px;
 }

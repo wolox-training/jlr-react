@@ -24,7 +24,7 @@ export interface IBook {
 export interface IBooksResponse {
   page: IBook[];
   count: number;
-  total_pages: number
+  total_pages: number;
   total_count: number;
   current_page: number;
   next_page: number | null;
