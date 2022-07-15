@@ -1,43 +1,21 @@
 @import '../../scss/variables/_colors';
 
 .container {
-  background-color: $gray;
-  margin: 20px;
-  min-width: 25%;
+  align-self: center;
+  background-color: $gray-light;
+  width: 300px;
 }
 
 .form {
   display: flex;
   flex-direction: column;
-  gap: 3px;
-  padding: 0 30px;
-  padding-bottom: 30px;
-}
-
-.btn-signUp {
-  background-color: $green-light;
-  border-radius: 4px;
-  color: $white;
-  font-weight: normal;
-  height: 30px;
-  margin-top: 10px;
-  padding: 4px 4px;
-  width: 100%;
-}
-
-.btn-login {
-  border: solid 2px $green-light;
-  border-radius: 4px;
-  color: $green-light;
-  font-weight: 600;
-  height: 30px;
-  padding: 4px 4px;
-  width: 100%;
+  gap: 2px;
+  padding: 24px;
 }
 
 .bar {
-  background-color: $gray-dark;
-  height: 1px;
-  margin: 12px 0;
-  width: 100%;
+  background-color: $gray;
+  height: 2px;
+  width: 252px;
+  margin: 10px 0;
 }

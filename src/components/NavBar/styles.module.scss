@@ -1,0 +1,30 @@
+@import '../../scss/variables/_colors';
+
+.nav-bar {
+  align-items: center;
+  background-color: $white;
+  border-top: 6px solid $blue-light;
+  box-shadow: 0 4px 10px 0 $black-rgba;
+  display: flex;
+  height: 70px;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.logo {
+  height: 70px;
+  width: 212.42px;
+}
+
+.btn-logout {
+  color: $black;
+  font-family: Roboto;
+  font-size: 18px;
+  height: 18px;
+  line-height: 21px;
+}
+
+.container {
+  display: flex;
+  gap: 32px;
+}
