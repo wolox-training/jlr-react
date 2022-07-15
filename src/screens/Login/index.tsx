@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { useMutation } from 'react-query';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import LogoContainer from '../../components/LogoContainer/index';
 import Input from '../../components/Input/index';
@@ -10,10 +10,12 @@ import { validations } from '../../constants/formsValidation';
 import { IFormLogin } from '../../utils/types';
 import { login } from '../../services/UsersService';
 import Notification from '../../components/Notification/index';
+import { sessionUser } from '../../utils/sessionManagement';
 
 import styles from './styles.module.scss';
 
 function Login() {
+  const navigate = useNavigate();
   const { t } = useTranslation();
 
   const [credentialsError, setCredentialsError] = useState(false);
@@ -27,11 +29,10 @@ function Login() {
   const mutation = useMutation(login, {
     onSuccess: (data: any) => {
       if (data.ok) {
-        console.log({
-          uid: data.data.data.uid,
-          client: data.headers.client,
-          'access-token': data.headers['access-token']
-        });
+        const { uid, client } = data.headers;
+        const accessToken = data.headers['access-token'];
+        sessionUser({ accessToken, client, uid });
+        navigate('/home', { replace: true });
       } else {
         setCredentialsError(true);
       }

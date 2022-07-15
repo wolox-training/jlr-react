@@ -4,10 +4,6 @@
     "@wolox/eslint-config-typescript"
   ],
   "rules": {
-    "linebreak-style": [
-      "error",
-      "windows"
-    ],
     "no-console": [
       "error",
       {

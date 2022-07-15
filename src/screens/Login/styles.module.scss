@@ -1,6 +1,7 @@
 @import '../../scss/variables/_colors';
 
 .container {
+  align-self: center;
   background-color: $gray-light;
   width: 300px;
 }
@@ -14,7 +15,7 @@
 
 .bar {
   background-color: $gray;
-  height: 2px;
-  width: 252px;
+  height: 2px;  
   margin: 10px 0;
+  width: 252px;
 }
