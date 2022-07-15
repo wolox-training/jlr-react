@@ -14,13 +14,20 @@ type InputProps = {
 function Input({ label, register, errors, type, name, validations }: InputProps) {
   return (
     <>
-      <label className={errors[name]?.message ? styles.labelFormError : styles.labelForm}>{label}</label>
+      <label htmlFor={name} className={errors[name]?.message ? styles.labelFormError : styles.labelForm}>
+        {label}
+      </label>
       <input
+        id={name}
         className={errors[name]?.message ? styles.inputFormError : styles.inputForm}
         type={type}
         {...register(name, validations)}
       />
-      <p className={styles.errorsForm}>{errors[name]?.message}</p>
+      {errors[name]?.message && (
+        <p role="msgError" className={styles.errorsForm}>
+          {errors[name]?.message}
+        </p>
+      )}
     </>
   );
 }
