@@ -1,0 +1,13 @@
+@import '../../scss/variables/_colors';
+
+.container {
+  border-top: solid 8px $blue-light;
+  display: flex;
+  justify-content: center;
+}
+
+.logo {
+  height: 70px;
+  margin-top: 20px;
+  width: 212.42px;
+}

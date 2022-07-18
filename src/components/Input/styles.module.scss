@@ -1,0 +1,40 @@
+@import '../../scss/variables/_colors';
+
+%input {
+  background-color: $white;
+  border-radius: 5px;
+  height: 32px;
+  width: 252px;
+}
+
+%label {
+  font-family: Roboto;
+  font-size: 16px;
+  height: 22px;  
+  line-height: 24px;
+  margin: 4px 0;
+}
+
+.input-form {
+  @extend %input;
+}
+
+.input-form-error {
+  @extend %input;
+  border: 1px solid red;
+}
+
+.label-form {
+  @extend %label;
+  color: $black;
+}
+
+.label-form-error {
+  @extend %label;
+  color: $red;
+}
+
+.errors-form {
+  color: $red;
+  font-size: small;
+}
