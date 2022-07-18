@@ -3,7 +3,7 @@ import i18next from 'i18next';
 i18next.addResources('es', 'FormsLabels', {
   firstName: 'Nombre',
   lastName: 'Apellido',
-  email: 'Email',
+  email: 'Correo electrónico',
   password: 'Contraseña',
   passwordConfirmation: 'Confirmación de contraseña'
 });

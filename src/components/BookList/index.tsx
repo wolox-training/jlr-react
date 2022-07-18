@@ -34,7 +34,7 @@ function NavBar() {
       <div className={styles.inputSearch}>
         <input
           type="text"
-          placeholder="Buscá por título del libro..."
+          placeholder={t('BookList:searchBook')}
           className={styles.searchBook}
           onChange={e => setSearch(e.target.value)}
         />

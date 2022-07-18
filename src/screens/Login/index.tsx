@@ -69,12 +69,12 @@ function Login() {
         {mutation.error && <Notification message={t('Login:loginError')} type="error" />}
         <div className="btn-container">
           <button className="btn-primary" type="submit">
-            {t('FormsButton:login')}
+            {t('FormsButtons:login')}
           </button>
           <div className={styles.bar} />
           <Link to="/sign_up">
             <button className="btn-secondary" type="button">
-              {t('FormsButton:signUp')}
+              {t('FormsButtons:signUp')}
             </button>
           </Link>
         </div>

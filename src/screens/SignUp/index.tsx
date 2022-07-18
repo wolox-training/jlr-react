@@ -93,12 +93,12 @@ function SignUp() {
         {mutation.error || userError ? <Notification message={t('SignUp:userError')} type="error" /> : ''}
         <div className="btn-container">
           <button disabled={mutation.isLoading} className="btn-primary" type="submit">
-            {mutation.isLoading ? <Loading /> : t('FormsButton:signUp')}
+            {mutation.isLoading ? <Loading /> : t('FormsButtons:signUp')}
           </button>
           <div className={styles.bar} />
           <Link to="/">
             <button className="btn-secondary" type="button">
-              {t('FormsButton:login')}
+              {t('FormsButtons:login')}
             </button>
           </Link>
         </div>

@@ -9,8 +9,8 @@ export type Props = {
 };
 
 function Notification({ message, type }: Props) {
-  const style = clsx({ [styles.msgError]:type === 'error', [styles.msgSuccess]:type === 'success' })
-  return <div className={style}>{ message }</div>;
+  const style = clsx({ [styles.msgError]: type === 'error', [styles.msgSuccess]: type === 'success' });
+  return <div className={style}>{message}</div>;
 }
 
 export default Notification;

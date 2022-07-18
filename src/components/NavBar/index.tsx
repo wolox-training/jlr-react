@@ -22,7 +22,7 @@ function NavBar() {
       <img className={styles.logo} src={logo} alt={t('NavBar:logo')} />
       <div className={styles.container}>
         <Cart />
-        <button type="button" onClick={logout} className={styles.btnLogout}>
+        <button type="button" onClick={submitLogout} className={styles.btnLogout}>
           {t('NavBar:logout')}
         </button>
       </div>
